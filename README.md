@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/tu-usuario/tu-repositorio)
+- Solution URL: [GitHub Repository](https://github.com/jesussantos210/recipe-page-jesus))
 - Live Site URL: [Live Site](https://tu-usuario.github.io/tu-repositorio)
 
 ## My process
