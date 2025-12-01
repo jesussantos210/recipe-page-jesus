@@ -1,0 +1,198 @@
+:root {
+   /* Colores */
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%); /* Fondo general */
+    --stone-150: hsl(30, 18%, 87%); /* Separadores */
+    --stone-600: hsl(30, 10%, 34%); /* Párrafos/Descripciones */
+    --stone-900: hsl(24, 5%, 18%); /* Títulos principales */
+    --rose-800: hsl(332, 51%, 32%); /* Color de la lista de preparación */
+    --rose-50: hsl(330, 100%, 98%); /* Fondo de la lista de preparación */
+    --brown-800: hsl(14, 45%, 36%);
+    /* Tipografía */
+    --font-serif: 'Young Serif', serif;
+    --font-sans: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos de Cuerpo: Mobile-First */
+
+body {
+    background-color: var(--stone-100);
+    font-family: var(--font-sans);
+    color: var(--stone-600);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Títulos generales --- */
+.recipe-title {
+    font-family: var(--font-serif);
+    color: var(--stone-900);
+    font-weight: 400;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    color: var(--brown-800);
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Contenedor Principal (Tarjeta) --- */
+
+.recipe-card {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 736px;
+    margin: 0 auto;
+}
+
+.recipe-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 2.5rem;
+}
+
+/* --- 1. TIEMPO DE PREPARACIÓN (Caja Rosa) --- */
+
+.preparation-time {
+    background-color: var(--rose-50);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem 0;
+}
+
+.preparation-title {
+    font-family: var(--font-sans);
+    color: var(--rose-800);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.time-list {
+    padding-left: 1.5rem;
+    color: var(--stone-600);
+}
+
+.time-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.time-list li::marker {
+    color: var(--rose-800);
+    font-size: 0.8rem;
+}
+
+/* --- 2. LISTAS (Ingredientes e Instrucciones) --- */
+
+.ingredients-list, .ingredients-list {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    color: var(--stone-600);
+}
+
+.ingredients-list li, .ingredients-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+}
+
+/* Instrucciones es lista ordenada */
+
+.ingredients-list {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+/* Estilo para los puntos (Números y Viñetas) */
+
+.ingredients-list LI::marker, .ingredients-list li::marker {
+    color: var(--rose-800);
+    font-size: 0.8rem;
+}
+
+/* Separador horizontal */
+
+.separator {
+    border: none;
+    border-top: 1px solid var(--stone-150);
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* --- 3. NUTRICIÓN (Tabla) --- */
+
+.nutrition-description {
+    margin-bottom: 1.5rem;
+}
+.nutrition-table {
+    display: grid;
+    gap: 0rem;
+}
+
+.nutrition-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--stone-150);
+    padding: 0.8rem 2rem;
+}
+
+.nutrition-item:last-child {
+    border-bottom: none; /* Eliminar borde del último elemento */
+}
+
+.nutrition-name {
+    color: var(--stone-600);
+    padding-left: 0.5rem;
+    margin-left: 0rem;
+}
+
+.nutrition-name::before {
+    content: "• "; /* Agregar un punto antes del nombre */
+    color: var(--brown-800); /* Color del punto */
+}
+
+.nutrition-value {
+    color: var(--brown-800); /* Color de destaque de los valores */
+    font-weight: 700;
+    text-align: left;
+}
+
+/* --- MEDIA QUERY: Escritorio (Desktop) --- */
+@media (min-width: 650px) {
+    body {
+        padding: 7.5rem 0;
+    }
+    
+    .recipe-card {
+        border-radius: 24px;
+        padding: 2.5rem; /* Espacio alrededor de la tarjeta */
+    }
+    
+    /* En escritorio, la imagen y el contenido tienen esquinas redondeadas */
+    .recipe-image {
+        border-radius: 12px; /* Redondear esquinas */
+    }
+    
+    .recipe-content {
+        padding: 2.5rem 0 0 0; 
+    }
+}
